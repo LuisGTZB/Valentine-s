@@ -59,6 +59,11 @@
             color: red;
             margin-top: 10px;
         }
+        #yesMessages {
+            font-size: 18px;
+            color: red;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -77,7 +82,7 @@
         const yesButton = document.getElementById("yes");
         const message = document.getElementById("message");
         const noMessage = document.getElementById("noMessage");
-        const yesMessages = document.getElementById("yesMessages");
+        const yesMessage = document.getElementById("yesMessage");
         const container = document.getElementById("container");
 
         const noMessages = [
@@ -106,7 +111,7 @@
             yesButton.style.left = `${x}px`;
             yesButton.style.top = `${y}px`;
 
-            yesMessages.textContent = yesMessages[Math.floor(Math.random() * yesMessages.length)];
+            yesMessage.textContent = yesMessages[Math.floor(Math.random() * yesMessages.length)];
         });
 
         noButton.addEventListener("click", function() {
