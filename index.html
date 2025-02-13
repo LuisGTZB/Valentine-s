@@ -102,25 +102,35 @@
             "Ni quieres 💔"
         ];
 
+        let hoverCount = 0;
+        const maxHovers = 5;
+
         yesButton.addEventListener("mouseover", function() {
-            const maxX = container.clientWidth - yesButton.clientWidth - 20;
-            const maxY = container.clientHeight - yesButton.clientHeight - 60; 
-            
-            const x = Math.max(10, Math.random() * maxX);
-            const y = Math.max(40, Math.random() * maxY);
+            if (hoverCount < maxHovers) {
+                const maxX = container.clientWidth - yesButton.clientWidth - 20;
+                const maxY = container.clientHeight - yesButton.clientHeight - 60;
 
-            yesButton.style.left = `${x}px`;
-            yesButton.style.top = `${y}px`;
+                const x = Math.max(10, Math.random() * maxX);
+                const y = Math.max(40, Math.random() * maxY);
 
-            yesMessagesDiv.textContent = yesMessages[Math.floor(Math.random() * yesMessages.length)];
+                yesButton.style.left = `${x}px`;
+                yesButton.style.top = `${y}px`;
+
+                yesMessagesDiv.textContent = yesMessages[Math.floor(Math.random() * yesMessages.length)];
+        
+                hoverCount++;
+            }
         });
+
         
         noButton.addEventListener("click", function() {
             window.location.href = "https://www.youtube.com/watch?v=yywF9QEjViY";
         });
 
         yesButton.addEventListener("click", function() {
-            window.location.href = "mensaje.html";
+            if (hoverCount >= maxHovers) {
+                window.location.href = "mensaje.html";
+            }
         });
     </script>
 </body>
