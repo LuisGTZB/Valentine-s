@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz San Valentín! 💖</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffe6f2;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #message-container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+        h1 {
+            color: #ff4d79;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+        .heart {
+            font-size: 50px;
+            color: #ff4d79;
+            animation: heartbeat 1s infinite alternate;
+        }
+        @keyframes heartbeat {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="message-container">
+        <h1>¡Gracias por aceptar! 💕</h1>
+        <p>Eres la persona más especial del mundo y estoy muy feliz de compartir este día contigo. ❤️</p>
+        <p class="heart">❤️</p>
+    </div>
+</body>
+</html>
