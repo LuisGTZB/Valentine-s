@@ -77,6 +77,7 @@
         const yesButton = document.getElementById("yes");
         const message = document.getElementById("message");
         const noMessage = document.getElementById("noMessage");
+        const yesMessages = document.getElementById("yesMessages");
         const container = document.getElementById("container");
 
         const noMessages = [
@@ -96,8 +97,8 @@
         ];
 
         yesButton.addEventListener("mouseover", function() {
-            const maxX = container.clientWidth - noButton.clientWidth - 20;
-            const maxY = container.clientHeight - noButton.clientHeight - 60; 
+            const maxX = container.clientWidth - yesButton.clientWidth - 20;
+            const maxY = container.clientHeight - yesButton.clientHeight - 60; 
             
             const x = Math.max(10, Math.random() * maxX);
             const y = Math.max(40, Math.random() * maxY);
