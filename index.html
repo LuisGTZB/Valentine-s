@@ -87,7 +87,15 @@
             "sigues intentando? 💔"
         ];
 
-        noButton.addEventListener("mouseover", function() {
+        const yesMessages = [
+            "Lenta 😢",
+            "No Puedes? 😭",
+            "No se te ven ganas... 😔",
+            "Minimo esfuerzate poquito 🥺",
+            "ya no sigues intentando? 💔"
+        ];
+
+        yesButton.addEventListener("mouseover", function() {
             const maxX = container.clientWidth - noButton.clientWidth - 20;
             const maxY = container.clientHeight - noButton.clientHeight - 60; 
             
@@ -97,10 +105,10 @@
             noButton.style.left = `${x}px`;
             noButton.style.top = `${y}px`;
 
-            noMessage.textContent = noMessages[Math.floor(Math.random() * noMessages.length)];
+            yesMessages.textContent = yesMessages[Math.floor(Math.random() * noMessages.length)];
         });
 
-        yesButton.addEventListener("click", function() {
+        noButton.addEventListener("click", function() {
             window.location.href = "mensaje.html";
         });
     </script>
