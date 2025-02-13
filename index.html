@@ -42,11 +42,11 @@
         #yes {
             background-color: #4CAF50;
             color: white;
+            position: relative;
         }
         #no {
             background-color: #f44336;
             color: white;
-            position: relative;
         }
         #message {
             display: none;
@@ -54,15 +54,15 @@
             color: #ff1493;
             margin-top: 20px;
         }
-        #noMessage {
+        #noMessage, #yesMessages {
             font-size: 18px;
-            color: red;
             margin-top: 10px;
         }
-        #yesMessages {
-            font-size: 18px;
+        #noMessage {
             color: red;
-            margin-top: 10px;
+        }
+        #yesMessages {
+            color: red;
         }
     </style>
 </head>
@@ -75,6 +75,7 @@
         </div>
         <div id="message">¡Sabía que dirías que sí! 💕</div>
         <div id="noMessage"></div>
+        <div id="yesMessages"></div>
     </div>
 
     <script>
@@ -82,6 +83,7 @@
         const yesButton = document.getElementById("yes");
         const message = document.getElementById("message");
         const noMessage = document.getElementById("noMessage");
+        const yesMessagesDiv = document.getElementById("yesMessages");
         const container = document.getElementById("container");
 
         const noMessages = [
@@ -92,17 +94,29 @@
             "sigues intentando? 💔"
         ];
 
-        noButton.addEventListener("mouseover", function() {
-            const maxX = container.clientWidth - noButton.clientWidth - 20;
-            const maxY = container.clientHeight - noButton.clientHeight - 60; 
+        const yesMessages = [
+            "Lent@ 😢",
+            "No Puedes? 😭",
+            "No se te ven ganas... 😔",
+            "Minimo esfuerzate poquito 🥺",
+            "Ni quieres 💔"
+        ];
+
+        yesButton.addEventListener("mouseover", function() {
+            const maxX = container.clientWidth - yesButton.clientWidth - 20;
+            const maxY = container.clientHeight - yesButton.clientHeight - 60; 
             
             const x = Math.max(10, Math.random() * maxX);
             const y = Math.max(40, Math.random() * maxY);
 
-            noButton.style.left = `${x}px`;
-            noButton.style.top = `${y}px`;
+            yesButton.style.left = `${x}px`;
+            yesButton.style.top = `${y}px`;
 
-            noMessage.textContent = noMessages[Math.floor(Math.random() * noMessages.length)];
+            yesMessagesDiv.textContent = yesMessages[Math.floor(Math.random() * yesMessages.length)];
+        });
+        
+        noButton.addEventListener("click", function() {
+            window.location.href = "https://www.youtube.com/watch?v=yywF9QEjViY";
         });
 
         yesButton.addEventListener("click", function() {
