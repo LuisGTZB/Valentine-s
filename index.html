@@ -102,10 +102,10 @@
             const x = Math.max(10, Math.random() * maxX);
             const y = Math.max(40, Math.random() * maxY);
 
-            noButton.style.left = `${x}px`;
-            noButton.style.top = `${y}px`;
+            yesButton.style.left = `${x}px`;
+            yesButton.style.top = `${y}px`;
 
-            yesMessages.textContent = yesMessages[Math.floor(Math.random() * noMessages.length)];
+            yesMessages.textContent = yesMessages[Math.floor(Math.random() * yesMessages.length)];
         });
 
         noButton.addEventListener("click", function() {
